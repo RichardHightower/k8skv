@@ -11,10 +11,11 @@ COPY . /app
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN apt-get -y update; apt-get -y install net-tools procps  curl
+# For debugging
+# RUN apt-get -y update; apt-get -y install net-tools procps curl
 
-# Make port 5000 available to the world outside this container
-EXPOSE 5000
+# Make port 5001 available to the world outside this container
+EXPOSE 5001
 
 # Define environment variable
 ENV NAME k8skv
