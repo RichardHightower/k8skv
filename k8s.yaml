@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8skv-deployment
+spec:
+  replicas: 3  # Consider your scaling needs
+  selector:
+    matchLabels:
+      app: k8skv
+  template:
+    metadata:
+      labels:
+        app: k8skv
+    spec:
+      containers:
+      - name: k8skv
+        image: <your-docker-image>
+        ports:
+        - containerPort: 5000
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8skv-ingress
+spec:
+  rules:
+  - host: k8skv.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: k8skv-service
+            port:
+              number: 5000
+
