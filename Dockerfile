@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Define environment variable
-ENV NAME k8sKV
+ENV NAME k8skv
 
 # Run app.py when the container launches
 CMD ["python", "app.py"]

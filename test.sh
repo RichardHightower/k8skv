@@ -1,10 +1,10 @@
 
-BASE_URL=http://${SERVICE_HOST}:${SERVICE_PORT}/kv/namespace/configmap
+source env.sh
 
-curl BASE_URL
+curl "${BASE_URL}"
 
 curl -X POST -H "Content-Type: application/json" \
-    -d '{"key":"value"}' BASE_URL
+    -d '{"key":"value"}' "$BASE_URL"
 
 
-curl BASE_URL
+curl "$BASE_URL"
