@@ -11,6 +11,8 @@ COPY . /app
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN apt-get -y update; apt-get -y install net-tools procps  curl
+
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
 
