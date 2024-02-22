@@ -1,0 +1,8 @@
+armAuth:
+  secretJSON: |
+    {
+      "appId": "bfd1de40-2f5f-488b-9a59-1e720aedabac",
+      "displayName": "xrc360v2SP",
+      "password": "vSG8Q~85MYwARRVZVICi7dfcLGWtwcibcpLBKc~b",
+      "tenant": "1aad45ce-4bcd-472a-aea5-60fdbd500a7d"
+    }
