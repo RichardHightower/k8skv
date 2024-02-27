@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+spec:
+  tls:
+  - hosts:
+    - "xrcdevtest.eastus.cloudapp.azure.com" # Use your domain
+  rules:
+  - host: "xrcdevtest.eastus.cloudapp.azure.com" # Use your domain
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-service
+            port:
+              number: 80
